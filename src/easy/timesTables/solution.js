@@ -1,4 +1,10 @@
-// const table = new Array(5).fill([])
+// const table = [
+//     [],
+//     [],
+//     [],
+//     [],
+//     []
+// ]
 
 // const timesTable = () => {
 //     for (let i = 1; i <= 5; i++) {
@@ -9,22 +15,21 @@
 //     return table
 // }
 
-// console.log(timesTable())
+// console.log('my result:', timesTable())
 
 
 const createTimesTable = (numArrays, maxTimes) => {
     const timesTable = []
 
     for (let i = 1; i <= numArrays; i++) {
-        const thisTimesTable = []
+        timesTable.push([])
         for (let j = 1; j <= maxTimes; j++) {
-            thisTimesTable.push(j * i)
+            timesTable[i - 1].push(j * i)
         }
-        timesTable.push(thisTimesTable)
     }
     return timesTable
 }
 
 const numArrays = 12
 const maxTimes = 12
-console.log(createTimesTable(numArrays, maxTimes))
+console.log('result', createTimesTable(numArrays, maxTimes))
